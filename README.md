@@ -7,6 +7,12 @@ Since all of the training & testing happens within the Jupyter notebook, the onl
 
 This is the first demonstration of my LSTM model. In the notebook, I describe the process step-by-step, and I often mention what went wrong the first times I attempted to train the model and I failed. **In the future, I want to conduct a more thorough and careful evaluation of the model, as well as re-train the model on my collection of spam and non-spam emails I have received.** (right now it seems like most spam emails in the dataset include unknown words, so the model is biased against texts with unknowns words and labels them as spam)
 
+### Libraries
+- numpy
+- matplotlib
+- pandas
+- PyTorch
+
 ## References and Sources
 <a id="1">[1]</a> 
 Hochreiter, S., & Schmidhuber, J. (1997). Long short-term memory. Neural computation, 9(8), 1735–1780. https://doi.org/10.1162/neco.1997.9.8.1735
