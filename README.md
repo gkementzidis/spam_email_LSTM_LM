@@ -1,4 +1,7 @@
-# Detecting spam emails with Long Short-Term Memory (LSTM) networks.
+# Detecting spam emails with Long Short-Term Memory (LSTM) networks and Large Language Models (LLM).
+
+## LSTM
+
 Long Short-Term Memory (LSTM) networks are a special category of Recurrent Neural Networks (RNN) [1]. RNNs deal with sequential data, such as time-series or texts. LSTM tries to alleviate vanishing gradients found in traditional RNN training. They also treat "memory" (especially short-term memory) in a more delicate way. For more details, you can read the original cited paper.
 
 In order to respect the semantic relationships between words the GloVe word embedding model was used [2]. The data I used in this demo come from Kaggle [3]. It can be easily accessed and downloaded.
@@ -7,11 +10,19 @@ Since all of the training & testing happens within the Jupyter notebook, the onl
 
 This is the first demonstration of my LSTM model. In the notebook, I describe the process step-by-step, and I often mention what went wrong the first times I attempted to train the model and I failed. **In the future, I want to conduct a more thorough and careful evaluation of the model, as well as re-train the model on my collection of spam and non-spam emails I have received.** (right now it seems like most spam emails in the dataset include unknown words, so the model is biased against texts with unknowns words and labels them as spam)
 
+## LLM (GPT-2)
+
+Large Language Models like GPT-2 (which we used) are transformer-based models. They have gained popularity over the last few years. They are probably more succesful than RNNs because of transformers and their attention mechanism (?), which can handle long sequences of words and identify associations between words.
+
+I am fine-tuning the GPT-2 foundational model to detect spam emails. I am using its open-source version from Hugging Face.
+
 ### Libraries
 - numpy
 - matplotlib
 - pandas
 - PyTorch
+- transformers
+- evaluate
 
 ## References and Sources
 <a id="1">[1]</a> 
@@ -22,3 +33,9 @@ Hochreiter, S., & Schmidhuber, J. (1997). Long short-term memory. Neural computa
 
 <a id="3">[3]</a>
 https://www.kaggle.com/datasets/jackksoncsie/spam-email-dataset
+
+<a id="4">[4]</a>
+Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., & Sutskever, I. (2019). Language models are unsupervised multitask learners. OpenAI blog, 1(8), 9.
+
+<a id="5">[5]</a>
+Vaswani, A. (2017). Attention is all you need. Advances in Neural Information Processing Systems.
